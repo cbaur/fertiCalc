@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      fertiCalc
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-label>
+      <ion-list-header>Gefäßgröße (Liter)</ion-list-header>
+      <ion-badge color="secondary" item-right>{{size}}</ion-badge>
+    </ion-label>
+    <ion-item>
+      <ion-range required [(ngModel)]="size" color="secondary" pin="true" min="1" max="100"></ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pflanzengruppe</ion-label>
+      <ion-select [(ngModel)]="nitrogen" required>
+        <ion-option value="5">Schwachzehrer</ion-option>
+        <ion-option value="8">Mittelzehrer</ion-option>
+        <ion-option value="11">Starkzehrer</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button block large color="dark" (click)="calculateFertilizer()">Berechnen</button>
+  </div>
+</ion-content>
